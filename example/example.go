@@ -37,11 +37,11 @@ func main() {
 	if foo, found := c.Get("foo"); found {
 		fmt.Println(foo)
 	}
-	//Get the number of the cache
+	//Get the number of the item in the cache
 	c.Set("test", "hehe", cache.DefaultExpiration)
 	num := c.ItemCount()
 	fmt.Println(num)
-
+	//Delete the item in the cache
 	c.Delete("foo")
 	if _, found := c.Get("foo"); !found {
 		fmt.Println("delete")

@@ -1,9 +1,7 @@
 package goCache
 
 import (
-	//	"errors"
 	"fmt"
-	//	"fmt"
 	"runtime"
 	"sync"
 	"time"
