@@ -3,3 +3,8 @@ An in-memory key:value store/cache similar to memcached that is suitable for app
 
 
 see the example in file example.go
+
+
+Installation
+
+>go get github.com/UncleBig/goCache

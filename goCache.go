@@ -229,6 +229,15 @@ func (c *cache) ItemCount() int {
 
 }
 
+// Sets an (optional) function that is called with the key and value when an
+// item is evicted from the cache. (Including when it is deleted manually, but
+// not when it is overwritten.) Set to nil to disable.
+func (c *cache) OnEvicted(f func(string, interface{})) {
+	c.mu.Lock()
+	c.onEvicted = f
+	c.mu.Unlock()
+}
+
 // Delete all items from the cache.
 func (c *cache) Flush() {
 	c.mu.Lock()
