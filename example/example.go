@@ -41,10 +41,19 @@ func main() {
 	c.Set("test", "hehe", cache.DefaultExpiration)
 	num := c.ItemCount()
 	fmt.Println(num)
+
+	//Register callback function
+	c.OnEvicted(printDel)
+
 	//Delete the item in the cache
 	c.Delete("foo")
 	if _, found := c.Get("foo"); !found {
 		fmt.Println("delete")
 	}
 
+}
+
+//Define callback function
+func printDel(k string, v interface{}) {
+	fmt.Println(k, v)
 }
