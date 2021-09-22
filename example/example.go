@@ -1,9 +1,10 @@
 package main
 
 import (
-	cache "charles/goCache"
 	"fmt"
 	"time"
+
+	cache "github.com/UncleBig/goCache"
 )
 
 func main() {
